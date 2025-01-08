@@ -1,0 +1,68 @@
+/* 
+  GENERAL LAYOUT & BODY
+  - Uses a subtle background color behind the image
+  - Uses full viewport height
+  - Flex layout to center content
+*/
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 
+      The actual background image is set inline in index.ejs,
+      so here we just define fallback background color
+    */
+  background-color: #333;
+  text-align: center;
+}
+
+/* 
+    CONTAINER FOR WEATHER INFO
+    - "card" style with transparency, blur, box-shadow for info about the weather
+  */
+.info {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 0.4em 0;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+p {
+  font-size: 1.4rem;
+  margin: 0.4em 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Creates the fade in animation where the info card "appears" from below */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

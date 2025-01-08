@@ -1,0 +1,21 @@
+<!-- Include the header.ejs file for cohesion and simplicity -->
+<%- include('./partials/header.ejs') %>
+<!-- style the body's background image based on the data passed from the API -->
+<body
+  style="
+    background-image: url('/images/<%= backgroundIMG %>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  "
+>
+<!-- Display info given by the API -->
+  <div class="info">
+    <h3><%= weather %></h3>
+    <h2><%= temperature %> °F</h2>
+    <p>💨 <%= windspeed %> mph <%= winddirection %></p>
+  </div>
+  <!-- include footer elements for cohesion and simplicity -->
+  <%- include('./partials/footer.ejs') %>
+</body>
